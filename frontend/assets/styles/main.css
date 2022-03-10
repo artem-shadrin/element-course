@@ -2,6 +2,10 @@
   --bg-color: lightcoral;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: var(--bg-color);
   font-family: sans-serif;
