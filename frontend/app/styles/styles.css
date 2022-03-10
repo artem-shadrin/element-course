@@ -1,3 +1,8 @@
+:root {
+  --bg-color: lightcoral;
+}
+
 body {
-  background: lightcoral;
+  background: var(--bg-color);
+  font-family: sans-serif;
 }
