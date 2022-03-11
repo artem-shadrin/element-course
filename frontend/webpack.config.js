@@ -14,8 +14,10 @@ module.exports = (env, {mode}) => {
       filename: "bundle.js"
     },
     devServer: {
+      hot: true,
       open: true,
-      port: 3000
+      port: 3000,
+      watchFiles: "frontend/app/*.html"
     },
     module: {
       rules: [
@@ -28,7 +30,11 @@ module.exports = (env, {mode}) => {
         },
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, "css-loader"]
+          use: [
+            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            "css-loader",
+            "postcss-loader"
+          ]
         },
       ],
     },
