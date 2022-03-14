@@ -1,8 +1,14 @@
 :root {
-  --bg-color: lightcoral;
+  --bg-color: #003882;
 }
 
 body {
   background: var(--bg-color);
   font-family: sans-serif;
+}
+
+.card {
+  &__title {
+    text-align: center;
+  }
 }
