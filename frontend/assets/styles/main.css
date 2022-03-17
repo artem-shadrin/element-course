@@ -1,14 +1,1 @@
-:root {
-  --bg-color: #003882;
-}
-
-body {
-  background: var(--bg-color);
-  font-family: sans-serif;
-}
-
-.card {
-  &__title {
-    text-align: center;
-  }
-}
+:root{--bg-color:#003882}body{background:#add8e6;font-family:sans-serif}.card__title{text-align:center}

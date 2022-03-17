@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require("css-minimizer-webpack-plugin");
+
 
 module.exports = (env, {mode}) => {
 
@@ -17,10 +19,16 @@ module.exports = (env, {mode}) => {
       hot: true,
       open: true,
       port: 3000,
-      watchFiles: "frontend/app/*.html"
+      watchFiles: "frontend/app/index.html"
     },
     module: {
       rules: [
+        {
+          test: /\.js$/,
+          use: {
+            loader: "babel-loader",
+          }
+        },
         {
           test: /\.(png|jpe?g|gif)$/i,
           loader: 'file-loader',
@@ -29,11 +37,20 @@ module.exports = (env, {mode}) => {
           },
         },
         {
-          test: /\.css$/i,
+          test: /\.p?css$/i,
           use: [
             isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-            "css-loader",
-            "postcss-loader"
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  config: './postcss.config.js'
+                }
+              }
+            }
           ]
         },
       ],
@@ -45,6 +62,11 @@ module.exports = (env, {mode}) => {
       new MiniCssExtractPlugin({
         filename: 'styles/[name].css'
       })
-    ]
+    ],
+    optimization: {
+      minimizer: [
+        new OptimizeCSSAssetsPlugin({})
+      ]
+    }
   };
 }
