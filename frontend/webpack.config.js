@@ -1,12 +1,52 @@
 const path = require("path");
+const fs = require("fs");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require("css-minimizer-webpack-plugin");
+
+const ejsFiles = [
+  {
+    filePath: path.resolve(__dirname, './app/pages'),
+    outputPath: './',
+    inject: true
+  },
+  {
+    filePath: path.resolve(__dirname, './app/templates'),
+    outputPath: './templates',
+    inject: false
+  }
+];
 
 
 module.exports = (env, {mode}) => {
 
   const isDev = mode === 'development'
+
+  const generateHtmlPlugins = (files) => {
+    const htmlPlugins = [];
+    files.map(config => {
+      const { filePath, outputPath, inject } = config;
+      const templateFiles = fs.readdirSync(path.resolve(__dirname, filePath));
+      templateFiles.map(item => {
+        const parts = item.split('.');
+        const name = parts[0];
+        const extension = parts[1];
+        const _filePath = path.resolve(__dirname, `${filePath}/${name}.${extension}`);
+        htmlPlugins.push(
+            new HtmlWebpackPlugin({
+              filename: `${outputPath}/${name}.html`,
+              template: `!!ejs-compiled-loader!${_filePath}`,
+              scriptLoading: 'blocking',
+              minify: false,
+              inject
+            })
+        )
+      })
+    });
+    return htmlPlugins
+  }
+
+  const htmlPlugins = generateHtmlPlugins(ejsFiles);
 
   return {
     mode: mode,
@@ -19,7 +59,10 @@ module.exports = (env, {mode}) => {
       hot: true,
       open: true,
       port: 3000,
-      watchFiles: "frontend/app/index.html"
+      static: {
+        directory: "./assets",
+      },
+      watchFiles: "./app/**/*.ejs",
     },
     module: {
       rules: [
@@ -28,6 +71,15 @@ module.exports = (env, {mode}) => {
           use: {
             loader: "babel-loader",
           }
+        },
+        {
+          test: /\.ejs$/,
+          use: [
+            {
+              loader: "ejs-compiled-loader",
+              options: {}
+            }
+          ]
         },
         {
           test: /\.(png|jpe?g|gif)$/i,
@@ -56,9 +108,7 @@ module.exports = (env, {mode}) => {
       ],
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        inject: 'body'
-      }),
+        ...htmlPlugins,
       new MiniCssExtractPlugin({
         filename: 'styles/[name].css'
       })

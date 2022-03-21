@@ -1,6 +1,11 @@
+
 module.exports = {
   plugins: {
-    "postcss-preset-env": {},
-    "postcss-nested": {}
+    "postcss-nested": {},
+    "postcss-easy-import": {},
+    'postcss-mixins': {},
+    'postcss-for': {},
+    'postcss-custom-media': {},
+    "postcss-preset-env": {}
   }
 }
