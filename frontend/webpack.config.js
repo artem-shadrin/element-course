@@ -3,6 +3,8 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require("css-minimizer-webpack-plugin");
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const ejsFiles = [
   {
@@ -82,10 +84,13 @@ module.exports = (env, {mode}) => {
           ]
         },
         {
-          test: /\.(png|jpe?g|gif)$/i,
-          loader: 'file-loader',
-          options: {
-            name: 'images/[name].[ext]',
+          test: /\.(png|jpg|gif|svg)($|\?)|\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)/,
+          exclude: path.resolve(__dirname, 'app/icons/'),
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
           },
         },
         {
@@ -105,13 +110,53 @@ module.exports = (env, {mode}) => {
             }
           ]
         },
+        {
+          test: /\.svg$/,
+          exclude: path.resolve(__dirname, './app/fonts/'),
+          use: [
+            {
+              loader: 'svg-sprite-loader',
+              options: {
+                extract: true,
+                spriteFilename: 'icons.svg',
+              }
+            }
+          ]
+        },
       ],
     },
     plugins: [
         ...htmlPlugins,
       new MiniCssExtractPlugin({
         filename: 'styles/[name].css'
-      })
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './app/images'),
+            to: './images',
+            noErrorOnMissing: true
+          },
+          {
+            from: path.resolve(__dirname, './app/icons'),
+            to: './icons',
+            noErrorOnMissing: true
+          },
+          {
+            from: path.resolve(__dirname, './app/json'),
+            to: './json',
+            noErrorOnMissing: true
+          },
+          {
+            from: path.resolve(__dirname, './app/fonts'),
+            to: './fonts',
+            noErrorOnMissing: true
+          }
+        ]
+      }),
+      new SpriteLoaderPlugin({
+        plainSprite: true
+      }),
     ],
     optimization: {
       minimizer: [
