@@ -5,6 +5,8 @@ import svg4everybody from 'svg4everybody'
 import SvgUse from './js/svgUse'
 import "./styles/icons.pcss"
 
+import "./styles"
+
 // Load components
 import "./components/button"
 
