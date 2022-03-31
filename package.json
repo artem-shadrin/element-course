@@ -45,7 +45,8 @@
   },
   "dependencies": {
     "custom-select": "^1.1.15",
-    "imask": "^6.4.2"
+    "imask": "^6.4.2",
+    "reset-css": "^5.0.1"
   },
   "browserslist": [
     "safari 11",
