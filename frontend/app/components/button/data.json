@@ -4,6 +4,7 @@
   "type": "button",
   "href": "",
   "label": "Click me!",
+  "labelIsHidden": false,
   "icon": false,
   "disabled": false
 }

@@ -1,3 +1,3 @@
 export const requireAll = (requiredContext) => {
-    return requiredContext.keys().map(requiredContext)
-}
+  return requiredContext.keys().map(requiredContext);
+};

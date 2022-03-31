@@ -5,10 +5,20 @@
 <%- require("../layouts/head.ejs")(data) %>
 
 <section class="section">
-
+  <h1>Lorem ipsum dolor.</h1>
   <div>
     Обычная кнопка:
     <%- require("../components/button/template.ejs")() %>
+  </div>
+
+  <div>
+    Обычная кнопка:
+    <%- require("../components/button/template.ejs")({
+      extraClasses: [
+        "button--transparent"
+      ],
+      icon: "arrow-right"
+    }) %>
   </div>
 
   <div>
