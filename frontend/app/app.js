@@ -10,6 +10,8 @@ import "./styles"
 // Load components
 import "./components/button"
 
+import Modals from '../app/js/modals'
+
 window.App = {
   debug: !!window.location.port,
 }
@@ -18,4 +20,6 @@ window.svg4everybody = svg4everybody
 
 document.addEventListener('DOMContentLoaded', () => {
   new SvgUse()
+
+  App.Modals = new Modals()
 })

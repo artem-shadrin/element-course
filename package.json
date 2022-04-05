@@ -44,6 +44,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.26",
     "custom-select": "^1.1.15",
     "imask": "^6.4.2",
     "reset-css": "^5.0.1"

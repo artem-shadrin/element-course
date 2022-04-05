@@ -1,0 +1,22 @@
+<div
+  class="modal modal--feedback"
+  id="modal-feedback"
+  data-js-modal
+>
+  <header class="modal__header">
+    <div class="modal__title h3">
+      Обратная связь
+    </div>
+  </header>
+  <div class="modal__body">
+    Form
+  </div>
+  <footer class="modal__actions">
+    <%- require("../components/button/template.ejs")({
+      extraAttrs: [
+        'data-js-modal-close-button'
+      ],
+      label: "Отменить"
+    }) %>
+  </footer>
+</div>

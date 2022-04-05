@@ -36,6 +36,19 @@
     }) %>
   </div>
 
+  <div>
+    Обычная кнопка:
+    <% const params = {
+      src: '#modal-feedback',
+    } %>
+    <%- require("../components/button/template.ejs")({
+      extraAttrs: [
+        `data-js-modal-open-button=${JSON.stringify(params)}`
+      ],
+      label: 'Обратная связь'
+    }) %>
+  </div>
+
 </section>
 
 <%- require("../layouts/hero.ejs")() %>
