@@ -47,7 +47,8 @@
     "@fancyapps/ui": "^4.0.26",
     "custom-select": "^1.1.15",
     "imask": "^6.4.2",
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "swiper": "^8.0.7"
   },
   "browserslist": [
     "safari 11",

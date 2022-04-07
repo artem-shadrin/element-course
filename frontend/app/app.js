@@ -11,6 +11,7 @@ import "./styles"
 import "./components/button"
 
 import Modals from '../app/js/modals'
+import SlidersCollection from "./js/sliders";
 
 window.App = {
   debug: !!window.location.port,
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new SvgUse()
 
   App.Modals = new Modals()
+  App.Sliders = new SlidersCollection()
 })
