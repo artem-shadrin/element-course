@@ -84,16 +84,6 @@ module.exports = (env, {mode}) => {
           ]
         },
         {
-          test: /\.(png|jpg|gif|svg)($|\?)|\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)/,
-          exclude: path.resolve(__dirname, 'app/icons/'),
-          use: {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]'
-            }
-          },
-        },
-        {
           test: /\.p?css$/i,
           use: [
             isDev ? "style-loader" : MiniCssExtractPlugin.loader,
@@ -157,11 +147,6 @@ module.exports = (env, {mode}) => {
       new SpriteLoaderPlugin({
         plainSprite: true
       }),
-    ],
-    optimization: {
-      minimizer: [
-        new OptimizeCSSAssetsPlugin({})
-      ]
-    }
+    ]
   };
 }

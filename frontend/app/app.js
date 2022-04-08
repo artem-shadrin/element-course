@@ -13,6 +13,9 @@ import "./components/button"
 import Modals from '../app/js/modals'
 import SlidersCollection from "./js/sliders";
 
+//Load modules
+
+
 window.App = {
   debug: !!window.location.port,
 }

@@ -30,9 +30,6 @@ export default class SlidersCollection extends Collection {
         navigation: {
           nextEl: '.slider-hero .swiper-button-next',
           prevEl: '.slider-hero .swiper-button-prev',
-        },
-        on: {
-          init: (sw) => console.log(sw)
         }
       }
     },
