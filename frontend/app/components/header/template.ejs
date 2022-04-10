@@ -1,19 +1,77 @@
 <%
-const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const cfg = {...require("./data.json"), ...arguments?.[0]}
 const {
-	extraClasses,
-	extraAttrs
+  extraClasses,
+  extraAttrs
 } = cfg
 %>
-
 <%
 const classes = `header ${extraClasses.join(" ")}`.trim()
 const attrs = extraAttrs.join(" ")
 %>
 
 <header
-	class="<%= classes %>"
-	<%- extraAttrs %>
+  class="<%= classes %>"
+  <%- extraAttrs %>
 >
-	HEADER
+  <div class="container">
+    <div class="header__logo">
+      <%- require("../logo/template.ejs")({
+        img: {
+          src: "../../images/header-logo.png",
+          width: "253px",
+        },
+        title: "Компания",
+        href: "#"
+      }) %>
+    </div>
+    <div class="header__navigation">
+      <%- require("../navigation/template.ejs")({
+        links: [
+          {
+            text: "О компании",
+            href: "#"
+          },
+          {
+            text: "Продукция",
+            href: "#"
+          },
+          {
+            text: "Исследования",
+            href: "#"
+          },
+          {
+            text: "События",
+            href: "#"
+          },
+          {
+            text: "Контакты",
+            href: "#"
+          },
+        ],
+        numbActive: 2
+      }) %>
+    </div>
+    <div class="header__callback">
+      <%- require("../button/template.ejs")({
+        caption: {
+          text: "Обратная связь!",
+          isHidden: false
+        }
+      }) %>
+    </div>
+    <div class="header__lang-switcher">
+      <%- require("../lang-switcher/template.ejs")() %>
+    </div>
+    <div class="header__search">
+      <%- require("../button/template.ejs")({
+        extraClasses: ["button--transparent"],
+        caption: {
+          text: "Поиск",
+          isHidden: true
+        },
+        icon: "icon-search"
+      }) %>
+    </div>
+  </div>
 </header>

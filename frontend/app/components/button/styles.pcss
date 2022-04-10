@@ -1,70 +1,114 @@
 @import "../../styles/mixins.pcss";
 
 .button {
-  --height: 40px;
-  --paddingX: 20px;
-  --textColor: var(--c-light);
-  --bgColor: var(--c-main);
-  --iconSize: 26px;
-  --iconOffset: 15px;
-  --iconColor: var(--c-light);
+    --paddingX: 20px;
+    --paddingY: 10px;
+    --height: 40px;
+    --fontWeight: 700;
+    --fontSize: 14px;
+    --lineHeight: 1.35;
 
-  --hoverTextColor: var(--c-light);
-  --hoverBgColor: var(--c-accent);
-  --hoverIconColor: var(--c-light);
+    --textTransform: uppercase;
+    --textColor: var(--c-light);
+    --bgColor: var(--c-main);
 
-  --focusTextColor: var(--c-dark);
-  --focusBgColor: var(--c-light);
-  --focusIconColor: var(--c-dark);
+    --iconSize: 26px;
+    --iconOffset: 15px;
+    --iconColor: var(--c-light);
 
-  --disabledTextColor: var(--c-dark);
-  --disabledBgColor: var(--c-gray);
-  --disabledIconColor: var(--c-dark);
+    --hoverTextColor: var(--c-light);
+    --hoverBgColor: var(--c-accent);
+    --hoverIconColor: var(--c-light);
 
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: var(--height);
-  padding-inline: var(--paddingX);
-  color: var(--textColor);
-  background-color: var(--bgColor);
-  cursor: pointer;
+    --focusTextColor: var(--c-dark);
+    --focusBgColor: var(--c-light);
+    --focusIconColor: var(--c-dark);
 
-  &:hover {
-    color: var(--hoverTextColor);
-    background-color: var(--hoverBgColor);
+    --disabledTextColor: var(--c-dark);
+    --disabledBgColor: var(--c-gray);
+    --disabledIconColor: var(--c-dark);
 
-    .button__icon {
-      --color: var(--hoverIconColor);
+
+    @mixin reset-button;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--height);
+    padding-inline: var(--paddingX);
+    padding-block: var(--paddingY);
+    font-weight: var(--fontWeight);
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+    text-transform: var(--textTransform);
+    text-align: center;
+    color: var(--textColor);
+    background-color: var(--bgColor);
+    cursor: pointer;
+
+    &__icon {
+        --color: var(--iconColor);
+        --size: var(--iconSize);
     }
-  }
 
-  &:focus {
-    color: var(--focusTextColor);
-    background-color: var(--focusBgColor);
-
-    .button__icon {
-      --color: var(--focusIconColor);
+    &__caption {
+        white-space: nowrap;
+        &:not(:last-child) {
+            margin-right: var(--iconOffset);
+        }
     }
-  }
 
-  &:disabled {
-    color: var(--disabledTextColor);
-    background-color: var(--disabledBgColor);
+    &:hover {
+        color: var(--hoverTextColor);
+        background-color: var(--hoverBgColor);
 
-    .button__icon {
-      --color: var(--disabledIconColor);
+        .button__icon {
+            --color: var(--hoverIconColor);
+        }
     }
-  }
 
-  &--transparent {
-    --textColor: var(--c-gray);
-    --bgColor: transparent;
-    --iconColor: var(--c-main);
-  }
+    &:focus {
+        color: var(--focusTextColor);
+        background-color: var(--focusBgColor);
 
-  &__icon {
-    --size: var(--iconSize);
-    --color: var(--iconColor);
-  }
+        .button__icon {
+            --color: var(--focusIconColor);
+        }
+    }
+
+    &:disabled {
+        color: var(--disabledTextColor);
+        background-color: var(--disabledBgColor);
+
+        .button__icon {
+            --color: var(--disabledIconColor);
+        }
+    }
+
+    &--transparent {
+        --textColor: var(--c-gray);
+        --bgColor: transparent;
+        --iconColor: var(--c-main);
+        --hoverTextColor: var(--c-main);
+        --hoverBgColor: transparent;
+        --hoverIconColor: var(--c-accent);
+        --focusTextColor: var(--c-accent);
+        --focusBgColor: transparent;
+        --focusIconColor: var(--c-accent);
+        --disabledTextColor: var(--c-dark);
+        --disabledBgColor: var(--c-gray);
+        --disabledIconColor: var(--c-dark);
+
+    }
+
+    &--icon-only {
+        .button__caption {
+            display: none;
+        }
+
+        .button__icon {
+            --fillSvg: none;
+            --strokeSvg: var()
+        }
+    }
 }

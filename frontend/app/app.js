@@ -9,6 +9,17 @@ import "./styles"
 
 // Load components
 import "./components/button"
+import "./components/header"
+import "./components/navigation"
+import "./components/event-card"
+import "./components/checkbox"
+import "./components/footer"
+import "./components/grecaptcha"
+import "./components/input"
+import "./components/lang-switcher"
+import "./components/logo"
+import "./components/share"
+
 
 import Modals from '../app/js/modals'
 import SlidersCollection from "./js/sliders";
