@@ -1,0 +1,53 @@
+@import "../../styles/mixins.pcss";
+
+.navigation {
+    --fontSize: 14px;
+    --fontWeight: 700;
+    --fontFamily: var(--base-font-family);
+    --textColor: var(--c-dark);
+    --textBgColor: transparent;
+    --textTransform: uppercase;
+
+    --hoverTextColor: var(--c-accent);
+    --focusTextColor: var(--c-accent-2);
+    --disabledTextColor: var(--c-gray);
+    --linkOffset: 40px;
+
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: var(--linkOffset);
+        }
+
+
+    }
+
+    &__link {
+        @mixin reset-link;
+        font-weight: var(--fontWeight);
+        font-size: var(--fontSize);
+        font-family: var(--fontFamily);
+        white-space: nowrap;
+        color: var(--textColor);
+        text-transform: var(--textTransform);
+
+        &:hover {
+            color: var(--hoverTextColor);
+        }
+
+        &:focus, &--active {
+            color: var(--focusTextColor);
+        }
+
+        &:disabled {
+            color: var(--disabledTextColor);
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs,
+  links,
+  numbActive
+} = cfg
+%>
+<%
+const classes = `navigation ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<nav
+  class="<%= classes %>"
+  <%- attrs %>
+>
+  <ul class="navigation__list">
+    <% links.forEach((item, i)=>{ %>
+
+      <li class="navigation__item">
+        <a href="<%- item.href %>"
+           class="navigation__link  <% if (numbActive - 1 === i) { %> navigation__link--active <% } %>">
+          <%- item.text %>
+        </a>
+      </li>
+
+    <% }) %>
+  </ul>
+</nav>

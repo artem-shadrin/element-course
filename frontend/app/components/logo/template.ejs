@@ -1,0 +1,28 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]}
+const {
+  extraClasses,
+  extraAttrs,
+  img,
+  alt,
+  href,
+  title
+} = cfg
+%>
+<%
+const classes = `logo ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<a
+  class="<%= classes %>"
+  <%- extraAttrs %>
+  href="<%= href %>"
+  title="<%= title %>"
+>
+  <% if (img.src) { %>
+    <img class="logo__img" src="<%= img.src %>" alt="<%= title %>" width="<%= img.width %>">
+  <% } else { %>
+    <span class="logo__title"><%- title %></span>
+  <% } %>
+</a>
