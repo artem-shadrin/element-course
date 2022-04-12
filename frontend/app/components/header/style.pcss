@@ -5,14 +5,17 @@
     --elementOffsetY: 20px;
 
     padding-block: 20px;
-
-    .container {
-        display: flex;
-        align-items: center;
+    @media (--desktop-m) {
+        --elementOffsetX: 20px;
     }
+    display: flex;
+    align-items: center;
 
     &__logo {
-        padding-right: var(--elementOffsetX);
+        padding-inline: var(--elementOffsetX);
+        @media (--desktop-s) {
+            padding-right: 0;
+        }
     }
 
     &__navigation {
@@ -25,6 +28,9 @@
     }
 
     &__lang-switcher {
+        display: flex;
+        align-items: center;
+
         &::before {
             @mixin add-separator;
         }
@@ -37,4 +43,6 @@
             @mixin add-separator;
         }
     }
+
+
 }

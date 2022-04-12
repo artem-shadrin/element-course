@@ -1,4 +1,6 @@
 // Load icons
+
+
 const requireAll = (r) => r.keys().forEach(r)
 requireAll(require.context('./icons', true, /\.svg$/))
 import svg4everybody from 'svg4everybody'
@@ -23,19 +25,20 @@ import "./components/share"
 
 import Modals from '../app/js/modals'
 import SlidersCollection from "./js/sliders";
-
+import Forms from "./js/forms";
 //Load modules
 
 
 window.App = {
-  debug: !!window.location.port,
+    debug: !!window.location.port,
 }
 
 window.svg4everybody = svg4everybody
 
 document.addEventListener('DOMContentLoaded', () => {
-  new SvgUse()
+    new SvgUse()
 
-  App.Modals = new Modals()
-  App.Sliders = new SlidersCollection()
+    App.Modals = new Modals()
+    App.Sliders = new SlidersCollection()
+    App.Forms = new Forms()
 })

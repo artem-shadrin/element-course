@@ -1,5 +1,44 @@
 @import "../../styles/mixins.pcss";
 
-.example {
+.input {
+    --offsetTop: 30px;
+    --offsetBottom: 10px;
+    --offsetX: 20px;
+    --transition: .2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--c-gray-2);
+    height: 100%;
+    &__field {
+        resize: none;
+        padding: var(--offsetTop) var(--offsetX) var(--offsetBottom);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 133.98%;
+        width: 100%;
+        background-color: transparent;
+        height: 100%;
+        &:focus + .input__label,
+        &:not(:placeholder-shown) + .input__label {
+            top: var(--offsetBottom);
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 133.98%;
+            color: var(--c-gray);
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: var(--offsetX);
+        top: 19px;
+        transition: var(--transition);
+        z-index: 1;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 133.98%;
+        color: var(--c-dark);
+    }
 
 }

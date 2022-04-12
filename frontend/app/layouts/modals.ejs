@@ -9,7 +9,42 @@
     </div>
   </header>
   <div class="modal__body">
-    Form
+    <form action="" class="form-feedback">
+      <span class="form-feedback__legend">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</span>
+      <div class="form-feedback__fieldset">
+        <div class="form-feedback__name">
+          <%- require("../components/input/template.ejs")({
+            label: "ФИО",
+            id: "feedback__name",
+            name: "name"
+          }) %>
+        </div>
+        <div class="form-feedback__phone">
+          <%- require("../components/input/template.ejs")({
+            type: "tel",
+            label: "Телефон",
+            id: "feedback__phone",
+            name: "phone"
+          }) %>
+        </div>
+        <div class="form-feedback__email">
+          <%- require("../components/input/template.ejs")({
+            type: "email",
+            label: "Электронная почта",
+            id: "feedback__email",
+            name: "email"
+          }) %>
+        </div>
+        <div class="form-feedback__message">
+          <%- require("../components/input/template.ejs")({
+            type: "textarea",
+            label: "ФИО",
+            id: "feedback__message",
+            name: "message"
+          }) %>
+        </div>
+      </div>
+    </form>
   </div>
   <footer class="modal__actions">
     <%- require("../components/button/template.ejs")({

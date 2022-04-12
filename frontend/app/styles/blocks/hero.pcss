@@ -1,0 +1,39 @@
+.hero {
+    &__img {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+}
+
+.slider-hero {
+    &__navigation {
+        position: absolute;
+        right: 110px;
+        top: 50%;
+        z-index: 1;
+
+    }
+
+    &-next, &-prev {
+        width: 141px;
+        height: 26px;
+
+        svg {
+            --color: transparent;
+            --size: 141px;
+            height: auto !important;
+        }
+        &:hover{
+            svg{
+                --color: white;
+            }
+        }
+
+    }
+
+    &-next {
+        transform: rotateY(180deg);
+    }
+}

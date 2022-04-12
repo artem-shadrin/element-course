@@ -28,17 +28,11 @@ export default class SlidersCollection extends Collection {
       options: {
         slidesPerView: 1,
         navigation: {
-          nextEl: '.slider-hero .swiper-button-next',
-          prevEl: '.slider-hero .swiper-button-prev',
+          nextEl: '.slider-hero-next',
+          prevEl: '.slider-hero-prev',
         }
       }
     },
-    {
-      selector: '.slider-secondary',
-      options: {
-        slidesPerView: 2,
-      }
-    }
 
   ]
 
