@@ -5,6 +5,5 @@
   "date": "01.01.1970",
   "title": "Заголовок",
   "href": "#",
-  "timer": false,
-  "timerText": ""
+  "timer": false
 }

@@ -4,19 +4,18 @@
     --contentFontSize: 16px;
     --contentLineHeight: 1.5;
     --contentPadding: 30px;
-    --height: 100%;
+
     --dateOffset: 24px;
     --titleFontWeight: 700;
-    /*--gridRow: 1/3;*/
+    --smallEventCard: span 1;
+    --bigEventCard: span 2;
 
     --hoverTitleColor: var(--c-main);
     position: relative;
-    /*grid-row: var(--gridRow);*/
     display: flex;
     flex-direction: column;
-    flex: 0 0 var(--height);
-    height: var(--height);
-
+    height: 500px;
+    grid-row: var(--bigEventCard);
 
     &__content {
         flex: 0 0 50%;
@@ -120,7 +119,8 @@
 }
 
 .event-card--no-image {
-    --height: 250px;
+    height: 250px;
+    grid-row: var(--smallEventCard);
 
     .event-card__content {
         flex-basis: var(--height);

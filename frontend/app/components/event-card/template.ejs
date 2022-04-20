@@ -9,7 +9,6 @@ const {
   title,
   href,
   timer,
-  timerText,
 } = cfg
 %>
 <%
@@ -22,15 +21,12 @@ const classes = `event-card ${extraClasses.join(" ")} ${additionalClass}`.trim()
 const attrs = extraAttrs.join(" ")
 %>
 
-<div
+<li
   class="<%= classes %>"
   <%- attrs %>
 >
   <% if (timer){ %>
-    <div class="event-card__timer">
-      <div class="event-card__timer-text"><%- timerText %></div>
-      <div class="event-card__timer-start"></div>
-    </div>
+    <div class="event-card__timer"></div>
   <% } %>
   <% if(image) { %>
     <div class="event-card__img"><img src="<%- image %>" alt="Картинка события"></div>
@@ -39,4 +35,4 @@ const attrs = extraAttrs.join(" ")
     <span class="event-card__date"><%- date %></span>
     <a href="<%- href %>" class="event-card__title"><%- title %></a>
   </div>
-</div>
+</li>
