@@ -51,7 +51,7 @@
         --size: var(--iconSize);
     }
 
-    &__caption {
+    &__label {
         white-space: nowrap;
         &:not(:last-child) {
             margin-right: var(--iconOffset);
@@ -102,13 +102,13 @@
     }
 
     &--icon-only {
-        .button__caption {
+        .button__label {
             display: none;
         }
 
         .button__icon {
             --fillSvg: none;
-            --strokeSvg: var()
+            //--strokeSvg: var()
         }
     }
 }

@@ -5,11 +5,15 @@
     --offsetBottom: 10px;
     --offsetX: 20px;
     --transition: .2s ease;
+    --placeholderColor: var(--c-dark);
+    --hoverPlaceholderColor: var(--c-gray);
+
     position: relative;
     display: flex;
     align-items: center;
     background-color: var(--c-gray-3);
     height: 100%;
+
     &__field {
         resize: none;
         padding: var(--offsetTop) var(--offsetX) var(--offsetBottom);
@@ -19,13 +23,14 @@
         width: 100%;
         background-color: transparent;
         height: 100%;
+
         &:focus + .input__label,
         &:not(:placeholder-shown) + .input__label {
             top: var(--offsetBottom);
             font-weight: 700;
             font-size: 12px;
             line-height: 133.98%;
-            color: var(--c-gray);
+            color: var(--hoverPlaceholderColor);
         }
     }
 
@@ -38,7 +43,9 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 133.98%;
-        color: var(--c-dark);
+        color: var(--placeholderColor);
     }
+}
+.input--transparent{
 
 }

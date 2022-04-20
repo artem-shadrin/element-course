@@ -1,6 +1,8 @@
 // Load icons
 
 
+import EventTimerCollection from "./components/event-card";
+
 const requireAll = (r) => r.keys().forEach(r)
 requireAll(require.context('./icons', true, /\.svg$/))
 import svg4everybody from 'svg4everybody'
@@ -21,11 +23,13 @@ import "./components/input"
 import "./components/lang-switcher"
 import "./components/logo"
 import "./components/share"
+import "./components/map"
 
 
 import Modals from '../app/js/modals'
 import SlidersCollection from "./js/sliders";
 import Forms from "./js/forms";
+import MapCollection from "./components/map";
 //Load modules
 
 
@@ -41,4 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     App.Modals = new Modals()
     App.Sliders = new SlidersCollection()
     App.Forms = new Forms()
+    App.MapCollection = new MapCollection()
+    App.EventTimerCollection = new EventTimerCollection()
 })

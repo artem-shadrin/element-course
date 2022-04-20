@@ -3,11 +3,8 @@
   "extraAttrs": [],
   "type": "button",
   "href": "",
-  "caption": {
-    "text": "Click me!",
-    "isHidden": false
-  },
-
+  "label": "Click me!",
+  "labelIsHidden": false,
   "icon": false,
   "disabled": false
 }

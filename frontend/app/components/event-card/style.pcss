@@ -1,10 +1,128 @@
 @import "../../styles/mixins.pcss";
 
 .event-card {
-    &--painted {
+    --contentFontSize: 16px;
+    --contentLineHeight: 1.5;
+    --contentPadding: 30px;
+    --height: 100%;
+    --dateOffset: 24px;
+    --titleFontWeight: 700;
+    /*--gridRow: 1/3;*/
+
+    --hoverTitleColor: var(--c-main);
+    position: relative;
+    /*grid-row: var(--gridRow);*/
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 var(--height);
+    height: var(--height);
+
+
+    &__content {
+        flex: 0 0 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--c-light);
+        padding: var(--contentPadding);
+
+        font-size: var(--contentFontSize);
+        line-height: var(--contentLineHeight);
     }
 
-    &--full-img {
+    &__timer {
+        background-color: var(--c-main);
+        color: var(--c-light);
+        padding: 20px 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
     }
 
+    &__timer-text {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    &__timer-start {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &__img {
+        flex: 0 0 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__date {
+        display: inline-block;
+        color: var(--c-gray);
+        margin-bottom: var(--dateOffset);
+    }
+
+    &__title {
+        @mixin reset-link;
+        font-weight: var(--titleFontWeight);
+        transition: .2s;
+    }
+
+}
+
+.event-card--colored {
+    --hoverTitleColor: var(--c-light);
+
+    .event-card__content {
+        background-color: var(--c-main);
+    }
+
+    .event-card__title {
+        color: var(--c-light);
+    }
+
+    .event-card__date {
+        color: var(--c-gray);
+    }
+}
+
+.event-card--big-image {
+    .event-card__title {
+        color: var(--c-light);
+    }
+
+    .event-card__content {
+        background-color: transparent;
+        margin-top: auto;
+    }
+
+    .event-card__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: filter .2s;
+    }
+
+    &:hover {
+        .event-card__img {
+            filter: brightness(0.7);
+        }
+    }
+}
+
+.event-card--no-image {
+    --height: 250px;
+
+    .event-card__content {
+        flex-basis: var(--height);
+    }
 }

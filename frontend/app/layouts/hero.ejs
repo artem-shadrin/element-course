@@ -14,10 +14,7 @@
         <%- require("../components/button/template.ejs")({
           extraClasses: ["hero__btn"],
           icon: "icon-arrow",
-          caption: {
-            text: "В каталог",
-            isHidden: false
-          }
+          label: "В каталог",
         }) %>
         <img src="../images/hero/slide_0.jpg" alt="" class="hero__img">
       </div>
@@ -34,10 +31,7 @@
         <%- require("../components/button/template.ejs")({
           extraClasses: ["hero__btn"],
           icon: "icon-arrow",
-          caption: {
-            text: "В каталог",
-            isHidden: false
-          }
+          label: "В каталог",
         }) %>
       </div>
     </div>
@@ -77,45 +71,4 @@
       </li>
     </ul>
   </div>
-  <%- require("../components/button/template.ejs")({
-    extraAttrs: [`data-js-modal-open-button = '{"src": "#modal-feedback"}'`],
-    caption: {
-      text: "Открыть",
-      isHidden: false
-    }
-  }) %>
-
-  <%- require("../components/input/template.ejs")({
-    label: "ФИО"
-
-  }) %>
-</section>
-
-<section>
-  <header class="modal__header">
-    <div class="modal__title h3">
-      Обратная связь
-    </div>
-  </header>
-  <div class="modal__body">
-    <form action="./json/exampleSuccessForm.json" method="post" class="form" novalidate autocomplete="off" data-js-form>
-      <input class="form-input" type="text" name="name" id="" data-js-input-validate="">
-      <input class="form-input" type="text" name="user-email" id="" data-js-input-validate="email">
-      <%- require("../components/button/template.ejs")({
-        type: "submit",
-        caption: {
-          text: "Отправить",
-          isHidden: false
-        }
-      }) %>
-    </form>
-  </div>
-  <footer class="modal__actions">
-    <%- require("../components/button/template.ejs")({
-      extraAttrs: [
-        'data-js-modal-close-button'
-      ],
-      label: "Отменить"
-    }) %>
-  </footer>
 </section>
