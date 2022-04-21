@@ -16,6 +16,14 @@ const attrs = extraAttrs.join(" ")
   class="<%= classes %>"
   <%- attrs %>
 >
+  <div class="navigation__burger-menu">
+    <%- require("../button/template.ejs")({
+      extraClasses: ["button--transparent"],
+      labelIsHidden: true,
+      label: "Меню",
+      icon: "icon-burger-menu"
+    }) %>
+  </div>
   <ul class="navigation__list">
     <% links.forEach((item, i)=>{ %>
 

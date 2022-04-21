@@ -8,46 +8,44 @@ const {
 <%
 const classes = `header ${extraClasses.join(" ")}`.trim()
 const attrs = extraAttrs.join(" ")
+const links = [
+  {
+    text: "О компании",
+    href: "#"
+  },
+  {
+    text: "Продукция",
+    href: "#"
+  },
+  {
+    text: "Исследования",
+    href: "#"
+  },
+  {
+    text: "События",
+    href: "#"
+  },
+  {
+    text: "Контакты",
+    href: "#"
+  }
+]
 %>
 
 <header
   class="<%= classes %>"
-  <%- extraAttrs %>
+  <%- attrs %>
 >
   <div class="header__logo">
     <%- require("../logo/template.ejs")({
-      img: {
-        src: "../../images/header-logo.png",
-        width: "253px",
-      },
+      img: "../../images/header-logo.png",
       title: "Компания",
       href: "#"
     }) %>
   </div>
   <div class="header__navigation">
     <%- require("../navigation/template.ejs")({
-      links: [
-        {
-          text: "О компании",
-          href: "#"
-        },
-        {
-          text: "Продукция",
-          href: "#"
-        },
-        {
-          text: "Исследования",
-          href: "#"
-        },
-        {
-          text: "События",
-          href: "#"
-        },
-        {
-          text: "Контакты",
-          href: "#"
-        },
-      ],
+      links,
       numbActive: 2
     }) %>
   </div>

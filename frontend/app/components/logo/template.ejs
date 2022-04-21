@@ -4,7 +4,6 @@ const {
   extraClasses,
   extraAttrs,
   img,
-  alt,
   href,
   title
 } = cfg
@@ -16,12 +15,12 @@ const attrs = extraAttrs.join(" ")
 
 <a
   class="<%= classes %>"
-  <%- extraAttrs %>
+  <%- attrs %>
   href="<%= href %>"
   title="<%= title %>"
 >
-  <% if (img.src) { %>
-    <img class="logo__img" src="<%= img.src %>" alt="<%= title %>" width="<%= img.width %>">
+  <% if (img) { %>
+    <img class="logo__img" src="<%= img %>" alt="<%= title %>">
   <% } else { %>
     <span class="logo__title"><%- title %></span>
   <% } %>

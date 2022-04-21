@@ -96,7 +96,7 @@ export default class EventTimerCollection extends Collection {
     static instance = "[data-js-timer]"
     static selectors = {
         timerContainer: '.event-card__timer',
-        timerField: '.event-card__timer-start',
+        timerField: '.event-card__timer-date',
         timerTitle: '.event-card__timer-title'
     }
 

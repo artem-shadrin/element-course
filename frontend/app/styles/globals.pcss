@@ -34,6 +34,10 @@ body {
 main {
     display: flex;
     flex-direction: column;
+
+    & > *:not(:nth-of-type(3)) {
+        display: none !important;
+    }
 }
 
 template,
