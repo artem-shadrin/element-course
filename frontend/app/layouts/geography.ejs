@@ -1,21 +1,23 @@
 <section class="section geography">
-  <div class="geography__information">
-    <h2 class="h2 geography__title">География присутствия</h2>
-    <h3 class="geography__subtitle"><span class="geography__numb">>100</span>хороших мест есть
-      в России</h3>
-    <div class="geography__text">
-      Когда речь идет о качестве изоляции, мы понимаем ваши потребности, что подтверждено отзывами более 400
-      постоянных
-      клиентов по всему миру.
-    </div>
-    <div class="georgaphy__about-company">
-      <%- require("../components/button/template.ejs")({
-        icon: "icon-arrow",
-        label: "О компании"
-      }) %>
-    </div>
-  </div>
-  <div class="geography__map">
-    <%- require("../components/map/template.ejs")() %>
-  </div>
+
+   <div class="geography__information">
+     <h2 class="h2 geography__title">География присутствия</h2>
+     <h3 class="geography__subtitle"><span class="geography__numb">>100</span> <br> хороших мест есть
+       в России</h3>
+     <div class="geography__text">
+       Когда речь идет о качестве изоляции, мы понимаем ваши потребности, что подтверждено отзывами более <b>400</b>
+       постоянных
+       клиентов по всему миру.
+     </div>
+     <div class="geography__about-company">
+       <%- require("../components/button/template.ejs")({
+         icon: "icon-arrow",
+         label: "О компании"
+       }) %>
+     </div>
+   </div>
+   <div class="geography__map">
+     <%- require("../components/map/template.ejs")() %>
+   </div>
+
 </section>

@@ -1,28 +1,104 @@
+@import "../media.pcss";
+
 .geography {
+
+    --informationWidth: 426px;
+    --informationPaddingTop: 160px;
+    --informationPaddingRight: 40px;
+    --informationPaddingBottom: 240px;
+    --informationPaddingLeft: var(--grid-padding);
+    --informationShadow: var(--shadow-2);
+
+    --mapWidth: calc(100% - var(--informationWidth));
+    --mapMinHeight: 480px;
+
+    --titleFontWeight: 700;
+    --titleLineHeight: 1.24;
+    --titleColor: var(--c-dark);
+    --titleMarginBottom: 40px;
+
+    --subtitleValueFontWeight: 600;
+    --subtitleValueFontSize: 64px;
+    --subtitleValueLineHeight: 1.09;
+    --subtitleValueColor: var(--c-main);
+
+    --subtitleFontWeight: 700;
+    --subtitleFontSize: 22px;
+    --subtitleLineHeight: 1.45;
+    --subtitleColor: var(--c-main);
+    --subtitleMarginBottom: 30px;
+    --subtitleMaxWidth: 288px;
+
+    --textFontWeight: 400;
+    --textFontSize: 16px;
+    --textLineHeight: 1.375;
+    --textColor: var(--c-dark);
+    --textMarginBottom: 40px;
+
+
     display: flex;
-    flex-wrap: wrap;
+    overflow: hidden;
+
+    @media (--desktop-s) {
+        --informationPaddingTop: 50px;
+        --informationPaddingBottom: 20px;
+    }
+
+    @media (--tablet-s) {
+        display: block;
+        --informationPaddingTop: 30px;
+        --informationPaddingBottom: 10px;
+
+    }
 
     &__information {
-        flex: 0 0 535px;
-        padding-left: var(--grid-padding);
-        padding-right: 40px;
-        padding-block: 160px 240px;
+        flex: 0 0 var(--informationWidth);
+        box-shadow: var(--informationShadow);
+        padding-top: var(--informationPaddingTop);
+        padding-right: var(--informationPaddingRight);
+        padding-bottom: var(--informationPaddingBottom);
+        padding-left: var(--informationPaddingLeft);
+        user-select: none;
     }
 
     &__title {
-        margin-bottom: 40px;
+        font-weight: var(--titleFontWeight);
+        line-height: var(--titleLineHeight);
+        color: var(--titleColor);
+        margin-bottom: var(--titleMarginBottom);
     }
 
     &__subtitle {
-        margin-bottom: 30px;
+        max-width: var(--subtitleMaxWidth);
+        font-weight: var(--subtitleFontWeight);
+        font-size: var(--subtitleFontSize);
+        line-height: var(--subtitleLineHeight);
+        color: var(--subtitleColor);
+        margin-bottom: var(--subtitleMarginBottom);
+    }
+
+    &__numb {
+        font-weight: var(--subtitleValueFontWeight);
+        font-size: var(--subtitleValueFontSize);
+        line-height: var(--subtitleValueLineHeight);
+        color: var(--subtitleValueColor);
     }
 
     &__text {
-        margin-bottom: 40px;
+        font-weight: var(--textFontWeight);
+        font-size: var(--textFontSize);
+        line-height: var(--textLineHeight);
+        color: var(--textColor);
+        margin-bottom: var(--textMarginBottom);
     }
 
     &__map {
-        flex: 1 1 auto;
-        min-width: 375px;
+        flex-basis: var(--mapWidth);
+        flex-shrink: 1;
+        flex-grow: 1;
+        min-height: var(--mapMinHeight);
+        @media (--tablet-s) {
+            height: var(--mapMinHeight);
+        }
     }
 }

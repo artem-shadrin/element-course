@@ -1,32 +1,27 @@
+@import "../media.pcss";
+
 .events {
 
-    --conteinerOffset: 50px;
+    --listMarginBottom: 50px;
+    --gridColumns: 4;
 
     padding-block: 100px 250px;
-    background: linear-gradient(var(--c-gray-3), var(--c-gray-3)) no-repeat -517px -41px;
+    background: linear-gradient(var(--c-gray-3), var(--c-gray-3)) no-repeat -20vw -40px;
+    @media (--tablet) {
+        --gridColumns: 2;
+    }
+    @media (--mobile) {
+        --gridColumns: 1;
+    }
 
     &__title {
         margin-bottom: 50px;
     }
 
     &__list {
-
-
         display: grid;
-        --gridColumns: 4;
         grid-template-columns: repeat(var(--gridColumns), 1fr);
-
-
-        @media (max-width: 1280px) {
-            --gridColumns: 2;
-        }
-        @media (max-width: 768px) {
-            --gridColumns: 1;
-        }
-
-
-
-        margin-bottom: var(--conteinerOffset);
+        margin-bottom: var(--listMarginBottom);
     }
 
     &__to-section {

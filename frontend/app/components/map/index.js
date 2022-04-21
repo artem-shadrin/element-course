@@ -13,26 +13,37 @@ export class Map {
     }
 
     init() {
-        const hintLayout = ymaps.templateLayoutFactory
-            .createClass(`<div class="map__hint">
-              <span class="map__hint-title">{{properties.hintTitle}}</span>
-              <span class="map__hint-location">{{properties.hintLocation}}</span>
-            </div>`)
-        this.map = new ymaps.Map(this.instance, this.cfg)
+
+        this.map = new ymaps.Map(this.instance, this.cfg, {suppressMapOpenBlock: true})
         this.clusterer = new ymaps.Clusterer()
         this.clusterer.add(this.getPoints())
         this.map.geoObjects.add(this.clusterer)
-        this.cfg.points.forEach(point => point.options.hintLayout = hintLayout)
+
     }
 
     getPoints() {
-        return this.cfg.points.map(({coords, properties, options}) => new ymaps.Placemark(coords, properties, options))
+        return this.cfg.points.map(({coords, properties, options}) => {
+            const hintLayout = ymaps.templateLayoutFactory
+                .createClass(`<div class="map-hint"><span class="map-hint__title">{{properties.hintTitle}}</span><span class="map-hint__location">{{properties.hintLocation}}</span></div>`)
+            options.hintLayout = hintLayout
+            const point = new ymaps.Placemark(coords, properties, options)
+
+            point.events.add('mouseenter', function (e) {
+                point.options.set({iconImageSize: [42, 50]})
+            });
+            point.events.add('mouseleave', () => {
+                point.options.set({iconImageSize: [32, 37]})
+            });
+            return point
+        })
     }
 
     bindEvents() {
         window.ymaps.ready(() => {
             this.init()
         })
+
+
     }
 
 }
