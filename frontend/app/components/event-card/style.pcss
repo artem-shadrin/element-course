@@ -38,6 +38,10 @@
     --heightCard: 500px;
     --heightContent: 250px;
 
+
+    --baseTransitionDuration: .2s;
+
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -107,7 +111,7 @@
 
     &__title {
         @mixin reset-link;
-        transition: .3s;
+        @mixin transition;
         font-weight: var(--titleFontWeight);
         font-size: var(--titleFontSize);
         line-height: var(--titleLineHeight);
@@ -136,7 +140,6 @@
     --contentBgColor: transparent;
 
     .event-card__content {
-
         margin-top: auto;
     }
 
@@ -146,12 +149,12 @@
         top: 0;
         width: 100%;
         height: 100%;
-        transition: filter .2s;
+        transition: filter var(--baseTransitionDuration);
     }
 
     &:hover {
         .event-card__img {
-            filter: brightness(0.7);
+            filter: brightness(0.5);
         }
     }
 }

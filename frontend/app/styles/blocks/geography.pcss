@@ -12,9 +12,6 @@
     --mapWidth: calc(100% - var(--informationWidth));
     --mapMinHeight: 480px;
 
-    --titleFontWeight: 700;
-    --titleLineHeight: 1.24;
-    --titleColor: var(--c-dark);
     --titleMarginBottom: 40px;
 
     --subtitleValueFontWeight: 600;
@@ -38,33 +35,24 @@
 
     display: flex;
     overflow: hidden;
-
-    @media (--desktop-s) {
-        --informationPaddingTop: 50px;
-        --informationPaddingBottom: 20px;
-    }
+    height: 100vh;
 
     @media (--tablet-s) {
-        display: block;
-        --informationPaddingTop: 30px;
-        --informationPaddingBottom: 10px;
-
+        height: auto;
+        flex-direction: column;
+        --mapMinHeight: 320px;
     }
 
     &__information {
+        z-index: 1;
         flex: 0 0 var(--informationWidth);
         box-shadow: var(--informationShadow);
-        padding-top: var(--informationPaddingTop);
-        padding-right: var(--informationPaddingRight);
-        padding-bottom: var(--informationPaddingBottom);
-        padding-left: var(--informationPaddingLeft);
-        user-select: none;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+     }
 
     &__title {
-        font-weight: var(--titleFontWeight);
-        line-height: var(--titleLineHeight);
-        color: var(--titleColor);
         margin-bottom: var(--titleMarginBottom);
     }
 
@@ -93,7 +81,7 @@
     }
 
     &__map {
-        flex-basis: var(--mapWidth);
+        flex-basis: 1 1 var(--mapWidth);
         flex-shrink: 1;
         flex-grow: 1;
         min-height: var(--mapMinHeight);

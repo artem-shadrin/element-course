@@ -1,74 +1,107 @@
 <section class="section hero">
-  <div class="slider-hero swiper">
+  <div class="swiper slider-hero" id="slider-hero">
     <div class="slider-hero__wrapper swiper-wrapper">
-      <div class="swiper-slide slider-hero__slide">
-
-        <h1 class="hero__title">Проект
-          «Люди — природе» </h1>
-        <div class="hero__description">Проект «Люди — природе» стартовал весной 2019 года при поддержке
-          Европейского
-          Союза в России и направлен на вовлечение общественности в охрану окружающей среды в Кавказском, Алтае-Саянском
-          и
-          Амурском экорегионах.
+      <div class="swiper-slide  slider-hero__slide">
+        <img src="../images/hero/slide_0.jpg" alt="" class="hero__img" loading=lazy>
+        <h1 class="h1 hero__title">
+          Проект<br> «Люди — природе» </h1>
+        <div class="hero__description">
+          Проект «Люди — природе» стартовал весной 2019 года при поддержке
+          Европейского Союза в России и направлен на вовлечение общественности в охрану окружающей среды в Кавказском,
+          Алтае-Саянском и Амурском экорегионах.
         </div>
-        <%- require("../components/button/template.ejs")({
-          extraClasses: ["hero__btn"],
-          icon: "icon-arrow",
-          label: "В каталог",
-        }) %>
-        <img src="../images/hero/slide_0.jpg" alt="" class="hero__img">
+        <div class="hero__btn">
+          <%- require("../components/button/template.ejs")({
+            icon: "icon-arrow",
+            label: "В каталог",
+          }) %>
+        </div>
       </div>
-      <div class="swiper-slide slider-hero__slide">
-        <img src="../images/hero/slide_0.jpg" alt="" class="hero__img">
-        <h1 class="hero__title">Проект
-          «Люди — природе» </h1>
-        <div class="hero__description">Проект «Люди — природе» стартовал весной 2019 года при поддержке
-          Европейского
-          Союза в России и направлен на вовлечение общественности в охрану окружающей среды в Кавказском, Алтае-Саянском
-          и
-          Амурском экорегионах.
+      <div class="swiper-slide  slider-hero__slide">
+        <img src="../images/hero/slide_1.jpg" alt="" class="hero__img" loading=lazy>
+        <h1 class="h1 hero__title">
+          Проект<br> «Люди — природе» </h1>
+        <div class="hero__description">
+          Проект «Люди — природе» стартовал весной 2019 года при поддержке
+          Европейского Союза в России и направлен на вовлечение общественности в охрану окружающей среды в Кавказском,
+          Алтае-Саянском и Амурском экорегионах.
         </div>
-        <%- require("../components/button/template.ejs")({
-          extraClasses: ["hero__btn"],
-          icon: "icon-arrow",
-          label: "В каталог",
-        }) %>
+        <div class="hero__btn">
+          <%- require("../components/button/template.ejs")({
+            icon: "icon-arrow",
+            label: "В каталог",
+          }) %>
+        </div>
+      </div>
+      <div class="swiper-slide  slider-hero__slide">
+        <img src="../images/hero/slide_2.jpg" alt="" class="hero__img" loading=lazy>
+        <h1 class="h1 hero__title">
+          Проект<br> «Люди — природе» </h1>
+        <div class="hero__description">
+          Проект «Люди — природе» стартовал весной 2019 года при поддержке
+          Европейского Союза в России и направлен на вовлечение общественности в охрану окружающей среды в Кавказском,
+          Алтае-Саянском и Амурском экорегионах.
+        </div>
+        <div class="hero__btn">
+          <%- require("../components/button/template.ejs")({
+            icon: "icon-arrow",
+            label: "В каталог",
+          }) %>
+        </div>
+      </div>
+      <div class="swiper-slide  slider-hero__slide">
+        <img src="../images/hero/slide_3.jpg" alt="" class="hero__img" loading=lazy>
+        <h1 class="h1 hero__title">
+          Проект<br> «Люди — природе» </h1>
+        <div class="hero__description">
+          Проект «Люди — природе» стартовал весной 2019 года при поддержке
+          Европейского Союза в России и направлен на вовлечение общественности в охрану окружающей среды в Кавказском,
+          Алтае-Саянском и Амурском экорегионах.
+        </div>
+        <div class="hero__btn">
+          <%- require("../components/button/template.ejs")({
+            icon: "icon-arrow",
+            label: "В каталог",
+          }) %>
+        </div>
       </div>
     </div>
     <div class="slider-hero__navigation">
-      <div class=" slider-hero-prev ">
+      <div class=" slider-hero-next">
         <svg class=" i-icon i-icon-slider-arrow">
           <use href="#icon-slider-arrow"></use>
         </svg>
       </div>
-      <div class=" slider-hero-next">
+      <div class=" slider-hero-prev ">
         <svg class=" i-icon i-icon-slider-arrow">
           <use href="#icon-slider-arrow"></use>
         </svg>
       </div>
     </div>
   </div>
-  <div class="hero__advantages">
-    <ul class="hero__advantages-list">
-      <li class="hero__advantages-item">
-        <span class="hero__advantages-value">60</span>
-        <span>лет на рынке</span>
-      </li>
-      <li class="hero__advantages-item">
-        <span class="hero__advantages-value">5</span>
-        <span>новых мест</span></li>
-      <li class="hero__advantages-item">
-        <span class="hero__advantages-value">>600</span>
-        <span>миллионов выделено</span></li>
-      </li>
-      <li class="hero__advantages-item">
-        <span class="hero__advantages-value">>100</span>
-        <span>стран присутствия</span></li>
-      </li>
-      <li class="hero__advantages-item">
-        <span class="hero__advantages-value">478</span>
-        <span>добрых дел было сделано в 2021 году</span></li>
-      </li>
-    </ul>
+  <div class="hero__advantages ">
+    <div class="hero__advantages-wrapper">
+      <ul class="hero__advantages-list">
+        <li class="hero__advantages-item">
+          <span class="hero__advantages-value">60</span>
+          <span class="hero__advantages-text">лет на рынке</span>
+        </li>
+        <li class="hero__advantages-item">
+          <span class="hero__advantages-value">5</span>
+          <span class="hero__advantages-text">новых мест</span></li>
+        <li class="hero__advantages-item">
+          <span class="hero__advantages-value">>600</span>
+          <span class="hero__advantages-text">миллионов выделено</span></li>
+        </li>
+        <li class="hero__advantages-item">
+          <span class="hero__advantages-value">>100</span>
+          <span class="hero__advantages-text">стран присутствия</span></li>
+        </li>
+        <li class="hero__advantages-item">
+          <span class="hero__advantages-value">478</span>
+          <span class="hero__advantages-text">добрых дел было сделано в 2021 году</span></li>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

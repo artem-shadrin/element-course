@@ -8,6 +8,7 @@ const {
   label,
   labelIsHidden,
   icon,
+  iconPosition,
   disabled
 } = cfg
 %>
@@ -28,8 +29,9 @@ const getIconMarkup = () => {
 }
 const getBodyMarkup = () => {
   return `
+      ${iconPosition === 'left' ? getIconMarkup() : ""}
 			<span class="button__label">${label}</span>
-			${getIconMarkup()}
+			${iconPosition === 'right' ? getIconMarkup() : ""}
     `
 }
 %>

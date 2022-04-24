@@ -29,7 +29,7 @@ const attrs = extraAttrs.join(" ")
     <div class="event-card__timer"></div>
   <% } %>
   <% if(image) { %>
-    <div class="event-card__img"><img src="<%- image %>" alt="Картинка события"></div>
+    <div class="event-card__img"><img src="<%- image %>" alt="Картинка события"  loading=lazy></div>
   <% } %>
   <div class="event-card__content">
     <span class="event-card__date"><%- date %></span>

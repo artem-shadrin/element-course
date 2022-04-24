@@ -66,4 +66,13 @@ const links = [
       icon: "icon-search"
     }) %>
   </div>
+  <div class="header__burger-menu">
+    <%- require("../button/template.ejs")({
+      extraAttrs: ["data-js-burger-button"],
+      extraClasses: ["button--transparent"],
+      labelIsHidden: true,
+      label: "Меню",
+      icon: "icon-burger-menu"
+    }) %>
+  </div>
 </header>

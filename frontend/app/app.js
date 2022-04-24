@@ -30,6 +30,7 @@ import Modals from '../app/js/modals'
 import SlidersCollection from "./js/sliders";
 import Forms from "./js/forms";
 import MapCollection from "./components/map";
+import {BurgerButton, MobileMenu} from "./js/burgerMenu";
 //Load modules
 
 
@@ -41,10 +42,12 @@ window.svg4everybody = svg4everybody
 
 document.addEventListener('DOMContentLoaded', () => {
     new SvgUse()
-
+    document.body.classList.add("dom-is-ready")
     App.Modals = new Modals()
     App.Sliders = new SlidersCollection()
     App.Forms = new Forms()
     App.MapCollection = new MapCollection()
     App.EventTimerCollection = new EventTimerCollection()
+    App.BurgerButton = new BurgerButton()
+    App.MobileMenu = new MobileMenu()
 })

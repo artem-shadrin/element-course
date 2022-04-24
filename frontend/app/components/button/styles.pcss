@@ -45,14 +45,17 @@
     color: var(--textColor);
     background-color: var(--bgColor);
     cursor: pointer;
+    @mixin transition;
 
     &__icon {
+
         --color: var(--iconColor);
         --size: var(--iconSize);
     }
 
     &__label {
         white-space: nowrap;
+
         &:not(:last-child) {
             margin-right: var(--iconOffset);
         }

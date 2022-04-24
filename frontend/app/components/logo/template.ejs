@@ -20,7 +20,7 @@ const attrs = extraAttrs.join(" ")
   title="<%= title %>"
 >
   <% if (img) { %>
-    <img class="logo__img" src="<%= img %>" alt="<%= title %>">
+    <img class="logo__img" src="<%= img %>" alt="<%= title %>"  loading=lazy>
   <% } else { %>
     <span class="logo__title"><%- title %></span>
   <% } %>

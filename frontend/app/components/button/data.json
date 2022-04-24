@@ -6,5 +6,6 @@
   "label": "Click me!",
   "labelIsHidden": false,
   "icon": false,
+  "iconPosition": "right",
   "disabled": false
 }
