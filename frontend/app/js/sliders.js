@@ -16,7 +16,6 @@ export class Slider {
 
     init() {
         this.swiper = new Swiper(this.instance, this.params);
-        console.log(this.swiper)
     }
 }
 

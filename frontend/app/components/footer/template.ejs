@@ -10,55 +10,52 @@ const classes = `footer ${extraClasses.join(" ")}`.trim()
 const attrs = extraAttrs.join(" ")
 %>
 
-<footer
-  class="<%= classes %>"
-  <%- extraAttrs %>
->
+<footer class="<%= classes %>" <%- extraAttrs %>>
   <div class="container">
     <div class="footer__menu">
       <div class="footer__logo">
         <%- require("../logo/template.ejs")({
           img: "../../images/footer-logo.png",
           title: "Компания",
-          href: "#"
+          href: "/"
         }) %>
       </div>
       <div class="footer__navigation">
         <nav class="footer-navigation">
           <ul class="footer-navigation__list">
             <li class="footer-navigation__group products">
-              <a href="" class="footer-navigation__link footer-text">Продукция</a>
+              <a href="/" class="footer-navigation__link footer-text">Продукция</a>
               <ul class="footer-navigation__subgroup">
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text footer-text--transparent">Лодки</a>
+                  <a href="/" class="footer-navigation__link footer-text footer-text--transparent">Лодки</a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text footer-text--transparent">Катеры</a>
+                  <a href="/" class="footer-navigation__link footer-text footer-text--transparent">Катеры</a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text footer-text--transparent">Плоты</a>
+                  <a href="/" class="footer-navigation__link footer-text footer-text--transparent">Плоты</a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text footer-text--transparent">Парусники</a>
+                  <a href="/" class="footer-navigation__link footer-text footer-text--transparent">Парусники</a>
                 </li>
               </ul>
             </li>
             <li class="footer-navigation__group main-information">
               <ul>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text">О компании</a>
+                  <a href="/" class="footer-navigation__link footer-text">О компании</a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text">Карьера</a>
+                  <a href="/" class="footer-navigation__link footer-text">Карьера</a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text">Исследования </a>
+                  <a href="/" class="footer-navigation__link footer-text">Исследования </a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text">События</a>
+                  <a href="/" class="footer-navigation__link footer-text">События</a>
                 </li>
                 <li class="footer-navigation__item">
-                  <a href="" class="footer-navigation__link footer-text">Политика конфиденциальности</a>
+                  <a href="/" class="footer-navigation__link footer-text">Политика конфиденциальности</a>
                 </li>
               </ul>
             </li>
@@ -95,17 +92,17 @@ const attrs = extraAttrs.join(" ")
         <div class="social">
           <span class="footer-text social-text">Поделиться страницей с соц. сетях:</span>
           <ul class="social__list">
-            <li class="social__item"><a href="" class="social__link" title="Youtube">
+            <li class="social__item"><a href="/" class="social__link" title="Youtube">
                 <svg class="i-icon i-icon-youtube">
                   <use href="#icon-youtube"></use>
                 </svg>
               </a></li>
-            <li class="social__item"><a href="" class="social__link" title="Facebook">
+            <li class="social__item"><a href="/" class="social__link" title="Facebook">
                 <svg class="i-icon i-icon-facebook">
                   <use href="#icon-facebook"></use>
                 </svg>
               </a></li>
-            <li class="social__item"><a href="" class="social__link" title="LinkedIn">
+            <li class="social__item"><a href="/" class="social__link" title="LinkedIn">
                 <svg class="i-icon i-icon-linkedin">
                   <use href="#icon-linkedin"></use>
                 </svg>

@@ -15,6 +15,7 @@
         <div class="form-feedback__name">
           <%- require("../components/input/template.ejs")({
             label: "ФИО",
+            mask: "fullname",
             id: "feedback__name",
             name: "name"
           }) %>
@@ -22,6 +23,7 @@
         <div class="form-feedback__phone">
           <%- require("../components/input/template.ejs")({
             type: "tel",
+            mask: "phone",
             label: "Телефон",
             id: "feedback__phone",
             name: "phone"
@@ -30,6 +32,7 @@
         <div class="form-feedback__email">
           <%- require("../components/input/template.ejs")({
             type: "email",
+            mask: "email",
             label: "Электронная почта",
             id: "feedback__email",
             name: "email"
@@ -38,18 +41,22 @@
         <div class="form-feedback__message">
           <%- require("../components/input/template.ejs")({
             type: "textarea",
-            label: "ФИО",
+            label: "Сообщение",
             id: "feedback__message",
-            name: "message"
+            name: "message",
+            required: false
           }) %>
         </div>
       </fieldset>
       <footer class="form-feedback__footer">
-        <div class="form-feedback__grecaptcha"></div>
+        <div class="form-feedback__grecaptcha">
+          <div class="g-recaptcha" data-sitekey="6Lf9y50fAAAAAOhPwphqrtRwEu4VPeWLT5vKjfhU"></div>
+        </div>
         <div class="form-feedback__privacy">
           <%- require("../components/checkbox/template.ejs")({
             id: "form-feedback__privacy",
             name: "privacy",
+            id: "form-feedback__privacy",
             type: "checkbox",
             label: "Согласен (согласна) с политикой конфиденциальности"
           }) %>

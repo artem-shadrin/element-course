@@ -2,21 +2,24 @@
   <div class="container">
     <div class="newsletter__content">
       <h2 class="h2 title newsletter__title">Новостная рассылка </h2>
-      <span
-        class="newsletter__legend">Будьте в курсе самых свежих новостей, новых решений и реализованных проектов</span>
+      <span class="newsletter__legend">Будьте в курсе самых свежих новостей, новых решений и реализованных проектов</span>
       <div class="newsletter__form">
-        <form action="" class="form-newsletter">
+        <form action="/" class="form-newsletter">
           <div class="form-newsletter__email">
             <%- require("../components/input/template.ejs")({
               extraClasses: ["input--underlined"],
               extraAttrs: ["data-js-input"],
-              label: "Введите ваш e-mail"
+              label: "Введите ваш e-mail",
+              name: "email",
+              id: "form-newsletter__email"
             }) %>
           </div>
           <div class="form-newsletter__privacy">
             <%- require("../components/checkbox/template.ejs")({
               extraClasses: ["checkbox--transparent"],
-              label: 'Я соглашаюсь с <a href=“/” target=“_blank”>соглашением о персональных данных</a>'
+              label: 'Я соглашаюсь с <a href=“/” target=“_blank”>соглашением о персональных данных</a>',
+               name: "privacy",
+               id: "form-newsletter__privacy"
             }) %>
           </div>
           <div class="form-newsletter__submit">

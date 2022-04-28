@@ -9,5 +9,6 @@
   "type": "text",
   "required": true,
   "autocomplete": false,
-  "readOnly": false
+  "readOnly": false,
+  "mask": null
 }

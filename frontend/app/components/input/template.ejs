@@ -12,6 +12,7 @@ const {
   readOnly,
   transparent,
   id,
+  mask,
   name
 } = cfg
 %>
@@ -54,6 +55,9 @@ const attrs = extraAttrs.join(" ")
       class="input__field"
     <% if(value) { %>
       value=<%- value %>>
+    <% } %>
+    <% if(mask) { %>
+      data-mask=<%- mask %>
     <% } %>
     id="<%- id %>"
     name="<%- name %>"
