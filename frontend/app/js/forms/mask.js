@@ -1,41 +1,49 @@
-import {getJs} from "../utils/getJs";
+import { getJs } from "../utils/getJs";
 
 export default class Masks {
-    constructor() {
-        this.load();
-    }
+  constructor() {
+    this.load();
+  }
 
-    init() {
+  init() {
+    this.mask("phone", {
+      mask: "+{7}(000)000-00-00",
+    });
+    this.mask("email", {
+      mask: function (value) {
+        if (/^[a-z0-9_\.-]+$/.test(value)) return true;
+        if (/^[a-z0-9_\.-]+@$/.test(value)) return true;
+        if (/^[a-z0-9_\.-]+@[a-z0-9-]+$/.test(value)) return true;
+        if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.$/.test(value)) return true;
+        if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}$/.test(value)) return true;
+        if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.$/.test(value)) return true;
+        if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.[a-z]{1,4}$/.test(value))
+          return true;
+        return false;
+      },
+    });
+  }
 
-        this.mask('phone', {
-            mask: '+{7}(000)000-00-00'
+  mask(dataValue, options) {
+      const elements = document.querySelectorAll(`[data-mask="${dataValue}"]`);
+    if (!elements) return;
+
+    elements.forEach((el) => {
+      window.IMask(el, options); 
+    });
+  }
+
+  load() {
+    if (window.IMask === "function") {
+      this.init();
+    } else {
+      getJs({ src: Masks.urlAPI })
+        .then((res) => {
+          this.init();
         })
-        this.mask('email', {
-            mask: /^\S*@?\S*$/
-        })
-
+        .catch((err) => console.debug(err));
     }
+  }
 
-    mask(dataValue, options) {
-        const elements = document.querySelectorAll(`[data-mask="${dataValue}"]`) // ищем поля ввода по селектору с переданным значением data-атрибута
-        if (!elements) return
-
-        elements.forEach(el => { // для каждого из полей ввода
-            window.IMask(el, options) // инициализируем плагин imask для необходимых полей ввода с переданными параметрами маски
-        })
-    }
-
-    load() {
-        if (window.IMask === 'function') {
-            this.init()
-        } else {
-            getJs({src: Masks.urlAPI})
-                .then(res => {
-                    this.init()
-                })
-                .catch(err => console.debug(err))
-        }
-    }
-
-    static urlAPI = "https://unpkg.com/imask"
+  static urlAPI = "https://unpkg.com/imask";
 }

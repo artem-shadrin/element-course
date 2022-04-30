@@ -8,10 +8,18 @@
     padding-top: 330px;
 
     &__menu {
-        display: flex;
         align-items: flex-start;
-        justify-content: space-between;
         padding-bottom: 110px;
+        display: grid;
+        grid-template-columns: 340px 1fr 370px;
+        gap: 20px;
+        @media (--tablet) {
+            grid-template-columns: 240px 1fr 320px;
+        }
+        @media (--tablet-s) {
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2,auto);
+        }
     }
 
     &__logo {
@@ -27,7 +35,10 @@
 
     &__navigation {
         flex: 1 1 auto;
-
+        @media (--tablet-s) {
+           order: 3;
+           grid-column: span 2;
+        }
     }
 
     &__social {
@@ -56,17 +67,19 @@
 .footer-navigation {
 
     &__list {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         justify-content: center;
+        align-items: start;
+        gap: 30px;
+        @media (--tablet-xxs) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__group {
         width: 100%;
         max-width: 309px;
-
-        & + & {
-            margin-left: 30px;
-        }
     }
 
     &__subgroup {
@@ -101,8 +114,10 @@
 .social {
     &-text {
         text-transform: none;
+        text-align: right;
+        display: inline-block;
+        width: 100%;
     }
-
     &__list {
         display: flex;
         margin-left: auto;

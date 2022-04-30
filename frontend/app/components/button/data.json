@@ -1,7 +1,7 @@
 {
   "extraClasses": [],
   "extraAttrs": [],
-  "type": "button",
+  "type": "submit",
   "href": "",
   "label": "Click me!",
   "labelIsHidden": false,

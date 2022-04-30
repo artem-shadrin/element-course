@@ -4,14 +4,15 @@
       <h2 class="h2 title newsletter__title">Новостная рассылка </h2>
       <span class="newsletter__legend">Будьте в курсе самых свежих новостей, новых решений и реализованных проектов</span>
       <div class="newsletter__form">
-        <form action="/" class="form-newsletter">
+        <form action="/" class="form-newsletter" data-js-form novalidate>
           <div class="form-newsletter__email">
             <%- require("../components/input/template.ejs")({
               extraClasses: ["input--underlined"],
-              extraAttrs: ["data-js-input"],
+              extraAttrs: [`data-js-input-validate="email"`],
               label: "Введите ваш e-mail",
               name: "email",
-              id: "form-newsletter__email"
+              id: "form-newsletter__email",
+              mask: "email"
             }) %>
           </div>
           <div class="form-newsletter__privacy">
